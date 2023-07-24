@@ -9,3 +9,4 @@ This is an Windows-oriented integration pack which consists icons, cursors and w
 - Cursors | 光标 :
   - [Bibata Cursor](https://github.com/ful1e5/Bibata_Cursor)
   - [KDE-Breeze Cursor](https://github.com/black7375/Breeze-Cursors-for-Windows)
+  - [Google Cursor](https://github.com/ful1e5/Google_Cursor)
