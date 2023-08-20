@@ -14,7 +14,9 @@ toolbar:not(#TabsToolbar) toolbarbutton,
     #alltabs-button > .toolbarbutton-badge-stack,
 ) /* Tab Bar Buttons */
 {
-    transition: filter .35s, background .35s !important;
+    transition: filter .35s,
+                opacity .45s,
+                background .35s !important;
 }
 
 /* --- --- --- --- --- --- */
@@ -27,7 +29,7 @@ toolbar:not(#TabsToolbar) toolbarbutton,
 
 @media (prefers-color-scheme: light)
 {
-    :not(.tabbrowser-tab[visuallyselected]) .tab-background
+    .tabbrowser-tab:not([visuallyselected]) .tab-background
     {
         background-color: #eee;
         opacity: .25;
@@ -54,9 +56,13 @@ toolbar:not(#TabsToolbar) toolbarbutton,
 }
 @media (prefers-color-scheme: dark)
 {
-    :not(.tabbrowser-tab[visuallyselected]) .tab-background
+    .tabbrowser-tab:not([visuallyselected])
     {
-        opacity: .15;
+        opacity: .65;
+    }
+    .tabbrowser-tab:not([visuallyselected]):hover
+    {
+        opacity: .95;
     }
     #TabsToolbar :is(
         #tabs-newtab-button > .toolbarbutton-icon,
