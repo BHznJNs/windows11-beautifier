@@ -4,25 +4,27 @@
 /* Url Bar */
 #main-window:not([privatebrowsingmode]) :is(#urlbar-background, #urlbar-input-container,.urlbarView-body-inner, #searchbar, .searchbar-textbox),
 .toolbarbutton-icon, /* Toolbar Buttons */
+toolbar:not(#TabsToolbar) toolbarbutton,
 .titlebar-buttonbox-container toolbarbutton, /* Window Close Button */
-.tab-background /* Tabs */
-{
-    transition: background .25s !important;
-}
-
-/* --- --- --- --- --- --- */
-
-/* Tabs */
+.tab-background, /* Tabs */
 #TabsToolbar :is(
     #tabs-newtab-button > .toolbarbutton-icon,
     #new-tab-button > .toolbarbutton-icon,
     #firefox-view-button > .toolbarbutton-icon,
     #alltabs-button > .toolbarbutton-badge-stack,
-) {
-    cursor: pointer;
-    transition: background .25s !important;
+) /* Tab Bar Buttons */
+{
+    transition: filter .35s, background .35s !important;
 }
 
+/* Toolbar Buttons Hovered */
+toolbar:not(#TabsToolbar) toolbarbutton:hover {
+    filter: brightness(.85) !important;
+}
+
+/* --- --- --- --- --- --- */
+
+/* Tabs */
 .tabbrowser-tab[visuallyselected] .tab-background
 {
     opacity: 1 !important;
@@ -43,6 +45,12 @@
     ) {
         background-color: rgb(238, 238, 238, .25);
     }
+
+    /* Make Toolbar Half-transparent */
+    #nav-bar
+    {
+        background-color: rgba(238, 238, 238, 0.75) !important;
+    }
 }
 @media (prefers-color-scheme: dark)
 {
@@ -57,6 +65,12 @@
         #alltabs-button > .toolbarbutton-badge-stack,
     ) {
         background-color: rgb(51, 51, 51, .35);
+    }
+
+    /* Make Toolbar Half-transparent */
+    #nav-bar
+    {
+        background-color: rgba(51, 51, 51, 0.45) !important;
     }
 }
 
@@ -172,12 +186,6 @@
 .titlebar-buttonbox-container toolbarbutton:hover
 {
     background-color: rgb(238, 238, 238, .45) !important;
-}
-
-/* Make Toolbar Half-transparent */
-#nav-bar
-{
-    background-color: rgba(238, 238, 238, 0.75) !important;
 }
 
 /* Right-Click Menu */
