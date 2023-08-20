@@ -22,6 +22,23 @@ toolbar:not(#TabsToolbar) toolbarbutton,
 /* --- --- --- --- --- --- */
 
 /* Tabs */
+.tabbrowser-tab
+{
+    transition: font .2s,
+                filter .35s,
+                opacity .45s,
+                background .35s !important;
+}
+.tabbrowser-tab:not([visuallyselected])
+{
+    font-weight: normal;
+    font-size: 1rem;
+}
+.tabbrowser-tab[visuallyselected]
+{
+    font-weight: bold;
+    font-size: 1.125rem;
+}
 .tabbrowser-tab[visuallyselected] .tab-background
 {
     opacity: 1 !important;
@@ -30,6 +47,39 @@ toolbar:not(#TabsToolbar) toolbarbutton,
 {
     transition: background .25s;
 }
+
+/* Window Close Button */
+.titlebar-buttonbox-container
+{
+    align-items: flex-start !important;
+}
+.titlebar-buttonbox-container toolbarbutton
+{
+    background-color: rgb(238, 238, 238, .15) !important;
+}
+.titlebar-buttonbox-container toolbarbutton:hover
+{
+    background-color: rgb(238, 238, 238, .45) !important;
+}
+
+/* Bookmark Bar */
+#main-window #navigator-toolbox #PersonalToolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme),
+#main-window #navigator-toolbox #PersonalToolbar:not(:-moz-lwtheme),
+#main-window #navigator-toolbox #PersonalToolbar:-moz-lwtheme,
+#main-window #navigator-toolbox #PersonalToolbar
+{
+    padding-top: 4px;
+    padding-bottom: 2px;
+    opacity: .85;
+}
+
+/* Right-Click Menu */
+menupopup
+{
+    opacity: .85;
+}
+
+/* Light / Dark Mode Styles */
 @media (prefers-color-scheme: light)
 {
     .tabbrowser-tab[visuallyselected]
@@ -58,7 +108,8 @@ toolbar:not(#TabsToolbar) toolbarbutton,
         box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12) !important;
     }
     /* Toolbar Buttons Hovered */
-    toolbar:not(#TabsToolbar) toolbarbutton:hover {
+    toolbar:not(#TabsToolbar) toolbarbutton:hover
+    {
         filter: brightness(.85) !important;
     }
 }
@@ -91,8 +142,10 @@ toolbar:not(#TabsToolbar) toolbarbutton,
     {
         background-color: rgba(51, 51, 51, 0.35) !important;
     }
+
     /* Toolbar Buttons Hovered */
-    toolbar:not(#TabsToolbar) toolbarbutton:hover {
+    toolbar:not(#TabsToolbar) toolbarbutton:hover
+    {
         filter: contrast(160%) !important;
     }
 }
@@ -195,24 +248,4 @@ toolbar:not(#TabsToolbar) toolbarbutton,
         margin-inline-end: 2px !important;
         padding-inline: var(--titlebar-close-inline-padding) !important;
     }
-}
-
-/* Window Close Button */
-.titlebar-buttonbox-container
-{
-    align-items: flex-start !important;
-}
-.titlebar-buttonbox-container toolbarbutton
-{
-    background-color: rgb(238, 238, 238, .15) !important;
-}
-.titlebar-buttonbox-container toolbarbutton:hover
-{
-    background-color: rgb(238, 238, 238, .45) !important;
-}
-
-/* Right-Click Menu */
-menupopup
-{
-    opacity: .85;
 }
