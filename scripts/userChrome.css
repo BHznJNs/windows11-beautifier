@@ -1,0 +1,181 @@
+/* Button Background Transitions */
+#PanelUI-button toolbarbutton, /* Main Menu Button */
+#downloads-button *, /* Downloads Button */
+/* Url Bar */
+#main-window:not([privatebrowsingmode]) :is(#urlbar-background, #urlbar-input-container,.urlbarView-body-inner, #searchbar, .searchbar-textbox),
+.toolbarbutton-icon, /* Toolbar Buttons */
+.titlebar-buttonbox-container toolbarbutton, /* Window Close Button */
+.tab-background /* Tabs */
+{
+    transition: background .25s !important;
+}
+
+/* --- --- --- --- --- --- */
+
+/* Tabs */
+#TabsToolbar :is(
+    #tabs-newtab-button > .toolbarbutton-icon,
+    #new-tab-button > .toolbarbutton-icon,
+    #firefox-view-button > .toolbarbutton-icon,
+    #alltabs-button > .toolbarbutton-badge-stack,
+) {
+    cursor: pointer;
+    transition: background .25s !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-background
+{
+    opacity: 1 !important;
+}
+
+@media (prefers-color-scheme: light)
+{
+    :not(.tabbrowser-tab[visuallyselected]) .tab-background
+    {
+        background-color: #eee;
+        opacity: .25;
+    }
+    #TabsToolbar :is(
+        #tabs-newtab-button > .toolbarbutton-icon,
+        #new-tab-button > .toolbarbutton-icon,
+        #firefox-view-button > .toolbarbutton-icon,
+        #alltabs-button > .toolbarbutton-badge-stack,
+    ) {
+        background-color: rgb(238, 238, 238, .25);
+    }
+}
+@media (prefers-color-scheme: dark)
+{
+    :not(.tabbrowser-tab[visuallyselected]) .tab-background
+    {
+        opacity: .15;
+    }
+    #TabsToolbar :is(
+        #tabs-newtab-button > .toolbarbutton-icon,
+        #new-tab-button > .toolbarbutton-icon,
+        #firefox-view-button > .toolbarbutton-icon,
+        #alltabs-button > .toolbarbutton-badge-stack,
+    ) {
+        background-color: rgb(51, 51, 51, .35);
+    }
+}
+
+/* --- --- --- --- --- --- */
+
+/* Mica */
+@media (-moz-windows-accent-color-in-titlebar: 0)
+{
+    #main-window[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode])
+    {
+        appearance: -moz-win-borderless-glass !important;
+        background-color: transparent !important;
+    }
+
+    :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) #navigator-toolbox
+    {
+        background-color: transparent !important;
+    }
+
+    :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) #navigator-toolbox
+    {
+        margin-block-start: 1px !important;
+    }
+
+    /* System window control buttons */
+
+    @media (min-resolution: 1dppx)
+    {
+        .titlebar-buttonbox-container
+        {
+            --titlebar-button-inline-padding: 16px;
+            --titlebar-close-inline-padding: 17px;
+        }
+    }
+
+    @media (min-resolution: 1.25dppx)
+    {
+        .titlebar-buttonbox-container
+        {
+            --titlebar-button-inline-padding: 17px;
+            --titlebar-close-inline-padding: 18px;
+        }
+    }
+
+    @media (min-resolution: 1.5dppx)
+    {
+        .titlebar-buttonbox-container
+        {
+            --titlebar-button-inline-padding: 17px;
+            --titlebar-close-inline-padding: 17px;
+        }
+    }
+
+    @media (min-resolution: 1.75dppx)
+    {
+        .titlebar-buttonbox-container
+        {
+            --titlebar-button-inline-padding: 17px;
+            --titlebar-close-inline-padding: 17px;
+        }
+    }
+
+    @media (min-resolution: 2dppx)
+    {
+        .titlebar-buttonbox-container
+        {
+            --titlebar-button-inline-padding: 16px;
+            --titlebar-close-inline-padding: 17px;
+        }
+    }
+
+    :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):not([sizemode="fullscreen"]) .titlebar-button:not(.titlebar-close:hover, .titlebar-close:hover:active) .toolbarbutton-icon
+    {
+        opacity: 0 !important;
+    }
+
+    :root[tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]):not([sizemode="fullscreen"]) .titlebar-button:not(.titlebar-close)
+    {
+        margin-inline-end: 1px !important;
+    }
+
+    :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-button
+    {
+        padding-inline: var(--titlebar-button-inline-padding) !important;
+    }
+
+    :root[sizemode="normal"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-close
+    {
+        padding-inline: var(--titlebar-close-inline-padding) !important;
+    }
+
+    :root[sizemode="maximized"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-button
+    {
+        padding-inline: var(--titlebar-button-inline-padding) !important;
+    }
+
+    :root[sizemode="maximized"][tabsintitlebar]:is(:not(:-moz-lwtheme), [lwt-default-theme-in-dark-mode]) .titlebar-close
+    {
+        margin-inline-end: 2px !important;
+        padding-inline: var(--titlebar-close-inline-padding) !important;
+    }
+}
+
+/* Window Close Button */
+.titlebar-buttonbox-container
+{
+    align-items: flex-start !important;
+}
+.titlebar-buttonbox-container toolbarbutton
+{
+    background-color: rgb(238, 238, 238, .15) !important;
+}
+.titlebar-buttonbox-container toolbarbutton:hover
+{
+    background-color: rgb(238, 238, 238, .45) !important;
+}
+
+/* Right-Click Menu */
+menupopup
+{
+    opacity: .85;
+}

@@ -1,4 +1,4 @@
-# Numix Theme Pack for Windows | Windows 下的 Numix 主题整合包
+# Windows 11 Beautifier
 
 This is an Windows-oriented integration pack which consists icons, cursors, wallpapers and tools.
 这是一个整合了一些图标、光标、壁纸和美化工具的 Windows 美化整合包。
