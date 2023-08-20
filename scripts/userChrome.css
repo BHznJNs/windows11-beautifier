@@ -26,9 +26,16 @@ toolbar:not(#TabsToolbar) toolbarbutton,
 {
     opacity: 1 !important;
 }
-
+.tab-close-button
+{
+    transition: background .25s;
+}
 @media (prefers-color-scheme: light)
 {
+    .tabbrowser-tab[visuallyselected]
+    {
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12) !important;
+    }
     .tabbrowser-tab:not([visuallyselected]) .tab-background
     {
         background-color: #eee;
@@ -41,6 +48,7 @@ toolbar:not(#TabsToolbar) toolbarbutton,
         #alltabs-button > .toolbarbutton-badge-stack,
     ) {
         background-color: rgb(238, 238, 238, .25);
+        box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12) !important;
     }
 
     /* Make Toolbar Half-transparent */
@@ -56,6 +64,10 @@ toolbar:not(#TabsToolbar) toolbarbutton,
 }
 @media (prefers-color-scheme: dark)
 {
+    .tabbrowser-tab[visuallyselected]
+    {
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12) !important;
+    }
     .tabbrowser-tab:not([visuallyselected])
     {
         opacity: .65;
@@ -71,6 +83,7 @@ toolbar:not(#TabsToolbar) toolbarbutton,
         #alltabs-button > .toolbarbutton-badge-stack,
     ) {
         background-color: rgb(51, 51, 51, .35);
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12) !important;
     }
 
     /* Make Toolbar Half-transparent */
