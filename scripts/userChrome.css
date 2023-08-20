@@ -177,7 +177,7 @@
 /* Make Toolbar Half-transparent */
 #nav-bar
 {
-    opacity: .75;
+    background-color: rgba(238, 238, 238, 0.75) !important;
 }
 
 /* Right-Click Menu */
