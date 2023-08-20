@@ -17,11 +17,6 @@ toolbar:not(#TabsToolbar) toolbarbutton,
     transition: filter .35s, background .35s !important;
 }
 
-/* Toolbar Buttons Hovered */
-toolbar:not(#TabsToolbar) toolbarbutton:hover {
-    filter: brightness(.85) !important;
-}
-
 /* --- --- --- --- --- --- */
 
 /* Tabs */
@@ -49,7 +44,12 @@ toolbar:not(#TabsToolbar) toolbarbutton:hover {
     /* Make Toolbar Half-transparent */
     #nav-bar
     {
-        background-color: rgba(238, 238, 238, 0.75) !important;
+        background-color: rgba(238, 238, 238, 0.65) !important;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12) !important;
+    }
+    /* Toolbar Buttons Hovered */
+    toolbar:not(#TabsToolbar) toolbarbutton:hover {
+        filter: brightness(.85) !important;
     }
 }
 @media (prefers-color-scheme: dark)
@@ -70,7 +70,11 @@ toolbar:not(#TabsToolbar) toolbarbutton:hover {
     /* Make Toolbar Half-transparent */
     #nav-bar
     {
-        background-color: rgba(51, 51, 51, 0.45) !important;
+        background-color: rgba(51, 51, 51, 0.35) !important;
+    }
+    /* Toolbar Buttons Hovered */
+    toolbar:not(#TabsToolbar) toolbarbutton:hover {
+        filter: contrast(160%) !important;
     }
 }
 
