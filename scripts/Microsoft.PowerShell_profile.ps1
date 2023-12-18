@@ -36,30 +36,19 @@ function Prompt {
     Write-Host(" " + ("-" * $diff) + " ") -NoNewLine
     Write-Host("[")        -NoNewLine
     Write-Host($weekShort) -NoNewLine -BackgroundColor DarkCyan -ForegroundColor White
-    Write-Host("]")
+    Write-Host("]") -NoNewLine
   }
 
-  # 显示天气
-  Write-Host("  [")        -NoNewLine
-  Write-Host($weather)     -NoNewLine -BackgroundColor Cyan -ForegroundColor Black
-  Write-Host("|")          -NoNewLine
-  Write-Host($temperature) -NoNewLine -BackgroundColor Blue -ForegroundColor White
-  Write-Host("]")          -NoNewLine
-
   # 显示 git
-  $lineLength = $weather.length + $temperature.length + 5
   git rev-parse | Out-Null
   if($?){
-		$gitBranch = " " + "$(git branch --show-current --no-color)" + " "
-    $diff = $terminalWidth - $lineLength - $gitBranch.length - 12
-    if ($diff -ge 0) {
-      Write-Host(" " + ("-" * $diff) + " ") -NoNewLine
-      Write-Host("[ ")       -NoNewLine
-      Write-Host("Git:")     -NoNewLine -ForegroundColor Red
-      Write-Host($gitBranch) -NoNewLine -BackgroundColor DarkRed -ForegroundColor White
-      Write-Host(" ]")       -NoNewLine
-    }
-	}
+    $gitBranch = " " + "$(git branch --show-current --no-color)" + " "
+
+    Write-Host("  [ ")       -NoNewLine
+    Write-Host("Git:")     -NoNewLine -ForegroundColor Red
+    Write-Host($gitBranch) -NoNewLine -BackgroundColor DarkRed -ForegroundColor White
+    Write-Host(" ]")       -NoNewLine
+  }
 
   return "`n=> "
 }
