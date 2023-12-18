@@ -6,9 +6,12 @@ customization:
   rime_version: 1.8.5
 patch:
   schema_list:
-    - {schema: luna_pinyin_simp}
+    - {schema: pinyin}
+    - {schema: japanese}
   menu:
     page_size: 6 # 候选词个数
+  switcher/caption: "「输入方案」"
+
   ascii_composer:
     good_old_caps_lock: true
     switch_key:
