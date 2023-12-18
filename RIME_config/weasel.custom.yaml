@@ -25,15 +25,16 @@ patch:
     comment_font_point: 12               # 注释字体大小
     inline_preedit: true                 # 嵌入式候选窗单行显示
     layout:
-      border: 8
-      border_width: 0       # 边框宽度
-      margin_x: 8           # 候选项左右边距
-      margin_y: 8           # 候选项上下边距
-      hilite_padding: 8     # 激活候选项背景色高度
-      hilite_spacing: 3     # 序号和候选项之间的间隔
-      spacing: 12           # 候选项间距
-      candidate_spacing: 24 # 候选项内部间距
-      round_corner: 12      # 圆角幅度，0为直角
+      border: 6
+      border_width: 0          # 边框宽度
+      margin_x: 18             # 候选项左右边距
+      margin_y: 18             # 候选项上下边距
+      spacing: 12              # 候选项间距
+      candidate_spacing: 24    # 候选项内部间距
+      round_corner: 12         # 输入法候选框的圆角幅度，0为直角
+      hilite_padding: 8        # 激活候选项背景色高度
+      hilite_spacing: 3        # 序号和候选项之间的间隔
+      hilited_corner_radius: 8 # 选词的圆角幅度，0为直角
 
   preset_color_schemes:
     BlueGrey:
@@ -41,9 +42,11 @@ patch:
       back_color: 0xF1EFEC                   # 候选框背景色
       border_color: 0xAEA490                 # 候选框边框颜色
       text_color: 0x333333                   # 已选择字文字颜色
-      hilited_text_color: 0xFFFFFF           # 已选择字右侧拼音文字颜色
-      hilited_back_color: 0xFFFFFF           # 已选择字右侧拼音背景色
-      hilited_candidate_text_color: 0xFFFFFF # 候选字颜色
-      hilited_candidate_back_color: 0x645A45 # 候选字背景色
+      hilited_text_color: 0x000000           # 已选择字右侧拼音文字颜色
+      hilited_back_color: 0x000000           # 已选择字右侧拼音背景色
+      hilited_candidate_text_color: 0xFFFFFF # 已选择字颜色
+      hilited_candidate_back_color: 0x645A45 # 已选择字背景色
+      hilited_comment_text_color: 0xE0E0E0   # 已选择字右侧注释文字颜色
+      hilited_label_color: 0xE0E0E0          # 已选择字左侧数字序号颜色
       candidate_text_color: 0x333333         # 未候选字颜色
       comment_text_color: 0x666666
