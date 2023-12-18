@@ -1,0 +1,24 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.15.0.0
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Sun Dec 17 22:14:53 2023"
+  rime_version: 1.8.5
+patch:
+  schema_list:
+    - {schema: luna_pinyin_simp}
+  menu:
+    page_size: 6 # 候选词个数
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Caps_Lock: commit_text
+      Control_L: noop
+      Control_R: noop
+      Shift_L: inline_ascii
+      Shift_R: commit_code
+  translator:
+    enable_encoder: true
+    enable_sentence: true
+    enable_user_dict: true
+    encode_commit_history: true

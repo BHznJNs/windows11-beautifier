@@ -1,0 +1,69 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.15.0.0
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Sun Dec 17 22:14:58 2023"
+  rime_version: 1.8.5
+patch:
+  style:
+    color_scheme: Mint
+    color_scheme_dark: Microsoft
+    display_tray_icon: false             # 是否显示右下角图标
+    horizontal: true                     # 横排显示
+    font_face: "Microsoft YaHei"         # 候选字体
+    font_point: 16                       # 候选字体大小
+    label_font_face: "JetBrains Mono"    # 序号字体
+    label_font_point: 14                 # 序号字体大小
+    comment_font_face: "Microsoft YaHei" # 注释字体
+    comment_font_point: 14               # 注释字体大小
+    inline_preedit: true                 # 嵌入式候选窗单行显示
+    layout:
+      border: 0
+      border_width: 0       # 边框宽度
+      margin_x: 8           # 候选项左右边距
+      margin_y: 8           # 候选项上下边距
+      hilite_padding: 8     # 激活候选项背景色高度
+      hilite_spacing: 3     # 序号和候选项之间的间隔
+      spacing: 12           # 候选项间距
+      candidate_spacing: 24 # 候选项内部间距
+      round_corner: 16      # 圆角幅度，0为直角
+
+  preset_color_schemes:
+    西米露:
+      name: 西米露
+      author: Loong
+      back_color: 0x030303                   # 候选框背景色
+      border_color: 0x0A0A0A                 # 候选框边框颜色
+      text_color: 0xFAFAFF                   # 已选择字文字颜色
+      hilited_text_color: 0xFFFFFF           # 已选择字右侧拼音文字颜色
+      hilited_back_color: 0x4734D6           # 已选择字右侧拼音背景色
+      hilited_candidate_text_color: 0xFFFFFF # 候选字颜色
+      hilited_candidate_back_color: 0x4734D6 # 候选字背景色
+      candidate_text_color: 0xFFFFFF         # 未候选字颜色
+      comment_text_color: 0xFCFCFC
+    Microsoft:
+      name: "Microsoft" # 配色名称
+      author: "XNOM" # 作者名称
+      back_color: 0x333333
+      border_color: 0x0A0A0A
+      text_color: 0xD77800
+      hilited_text_color: 0x000000 
+      hilited_back_color: 0xFFFFFF
+      hilited_candidate_text_color: 0xFFFFFF
+      hilited_candidate_back_color: 0xD77800
+      candidate_text_color: 0xFFFFFF
+      comment_text_color: 0xFCFCFC
+    Mint:
+      name: Mint
+      author: Mintimate <"Mintimate's Blog">
+      text_color: 0x6495ed
+      candidate_text_color: 0x424242
+      back_color: 0xefefef
+      border_color: 0xefefef
+      hilited_text_color: 0xed9564
+      hilited_back_color: 0xefefef
+      hilited_candidate_back_color: 0xed9564
+      hilited_candidate_text_color: 0xefefef
+      hilited_comment_text_color: 0xefefef
+      comment_text_color: 0xcac9c8
+      label_color: 0xcac9c8
