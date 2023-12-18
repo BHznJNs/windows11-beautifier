@@ -1,8 +1,9 @@
-name: custom_dict.all ##注意name和文件名一致
+name: chinese_simp # 注意name和文件名一致
 version: "2020.6.7"
 sort: by_weight
 use_preset_vocabulary: true
 # 此处为 输入法所用到的词库，既补充拓展词库的地方
 import_tables:
-  - luna_pinyin # 系统基础字库
-  - dicts/rime_ice
+  - dicts/base
+  - dicts/ext
+  - dicts/8105

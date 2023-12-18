@@ -1,5 +1,5 @@
 local function translator(input, seg)
-    if (input == "date") then
+    if (input == "date" or input == "riqi") then
         ------------------------------------------------------------------------------------
         --普通日期1，类似2022年01月02日
         date1=os.date("%Y年%m月%d日")
@@ -149,9 +149,6 @@ local function translator(input, seg)
         
         yield(Candidate("date", seg.start, seg._end, date5, " "))
         yield(Candidate("date", seg.start, seg._end, date6, " "))
-        yield(Candidate("date", seg.start, seg._end, os.date("%Y%m%d"), " "))
     end
 end
-------------------------------------------------------------------------------------
 return translator
- 

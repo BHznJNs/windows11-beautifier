@@ -9,6 +9,9 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
+  - name: mapping_suggestion
+    reset: 1
+    states: [ 关闭, 映射 ]
   - name: full_shape
     states: [ 半角, 全角 ]
   - name: simplification
@@ -34,34 +37,38 @@ engine:
     - fallback_segmentor
   translators:
     - lua_translator@time_translator
+    - lua_translator@week_translator
     - lua_translator@date_translator
     - punct_translator
     - "table_translator@custom_phrase"
     - reverse_lookup_translator
     - script_translator
   filters:
+    - simplifier@mapping_suggestion
     - simplifier
     - uniquifier
+
+mapping_suggestion:
+  opencc_config: mapping.json
+  option_name: mapping_suggestion
+  tips: all
+  inherit_comment: false
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
-    __patch:
-      - pinyin:/abbreviation
-      - pinyin:/spelling_correction
-      - pinyin:/key_correction
-      - erase/^xx$/
-      - derive/([aei])n$/$1ng/ # en => eng, in => ing
-      - derive/([aei])ng$/$1n/ # eng => en, ing => in
-      - derive/([iu])an$/$lang/ # ian => iang, uan => uang
-      - derive/([iu])ang$/$lan/ # iang => ian, uang => uan
-      - derive/([aeiou])ng$/$1gn/        # dagn => dang
-      - derive/ong$/on/                  # zhonguo => zhong guo
-      - derive/ao$/oa/                   # hoa => hao
-      - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
-      - abbrev/^([a-z]).+$/$1/  # 简拼（首字母）
-      - abbrev/^([zcs]h).+$/$1/ # 简拼（zh, ch, sh）
+    - erase/^xx$/
+    - derive/([aei])n$/$1ng/ # en => eng, in => ing
+    - derive/([aei])ng$/$1n/ # eng => en, ing => in
+    - derive/([iu])an$/$lang/ # ian => iang, uan => uang
+    - derive/([iu])ang$/$lan/ # iang => ian, uang => uan
+    - derive/([aeiou])ng$/$1gn/        # dagn => dang
+    - derive/ong$/on/                  # zhonguo => zhong guo
+    - derive/ao$/oa/                   # hoa => hao
+    - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
+    - abbrev/^([a-z]).+$/$1/  # 简拼（首字母）
+    - abbrev/^([zcs]h).+$/$1/ # 简拼（zh, ch, sh）
 
 translator:
   dictionary: chinese_simp
