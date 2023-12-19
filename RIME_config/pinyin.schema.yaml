@@ -39,6 +39,7 @@ engine:
     - lua_translator@time_translator
     - lua_translator@week_translator
     - lua_translator@date_translator
+    - lua_translator@timestamp_translator
     - punct_translator
     - "table_translator@custom_phrase"
     - reverse_lookup_translator
